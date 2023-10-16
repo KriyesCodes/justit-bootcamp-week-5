@@ -21,3 +21,10 @@ const headings = document.getElementsByClassName('small-title');
 for (heading of headings) {
   heading.innerHTML = 'Text Changed using JS';
 }
+
+/*
+!TASK
+add a div in the HTML
+Create a h1 with text using JS and put it inside the div
+Change font size, text and background color to whatever you want
+*/

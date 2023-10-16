@@ -60,3 +60,44 @@ const listItems = document.querySelectorAll('ul>li:nth-child(odd)');
 console.log(listItems);
 
 title.innerText = "JavaScript Document Object Model";
+
+// styling HTML Elements
+title.style.color = "rgb(245, 23, 30)";
+title.style.cssText =
+  `color: dodgerblue;
+  background-color: lightpink;
+  `;
+
+// Create a new element and add it to the document
+
+const ul = document.querySelector('ul');
+console.log(ul);
+// createElement()
+const newListItem = document.createElement('li');
+
+// Add the <li> to the store ul
+
+ul.append(newListItem);
+
+// Add text to the list item
+
+newListItem.innerHTML = 'new Fourth Item';
+
+// Add an ID to an element
+
+newListItem.setAttribute('id', 'fourthItem');
+
+// Remove an attribute from an element
+newListItem.removeAttribute('id');
+
+title.removeAttribute('id');
+
+// Adding class to an element
+newListItem.classList.add('newItem');
+
+newListItem.classList.remove('newItem');
+
+// Remove an element
+newListItem.remove();
+console.log(newListItem);
+

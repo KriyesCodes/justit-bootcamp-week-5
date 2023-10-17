@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="script.js"></script>
+  <title>Picture Swap</title>
+
+  <style>
+    .container1,
+    .container2 {
+      display: inline-block;
+      border-style: solid;
+      border-width: 5px;
+      height: 200px;
+      width: 200px;
+    }
+
+    .swap-button {
+      background-color: lightblue;
+      border: 2px solid black;
+      width: 200px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img id="image1" src="images/image1.jpg">
+  </div>
+  <div class="container">
+    <img id="image2" src="images/image2.jpg">
+  </div>
+  <br><br>
+  <button class="swap-button">SWAP!</button>
+</body>
+
+</html>

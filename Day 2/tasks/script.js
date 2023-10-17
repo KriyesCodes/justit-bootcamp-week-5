@@ -36,6 +36,7 @@ const submitButton = document.getElementById('submit');
 const p1 = document.getElementById('p1');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
+const namesTable = document.getElementById('names-table');
 
 submitButton.addEventListener('click', updateParagraph);
 submitButton.addEventListener('click', updateTable);
@@ -45,10 +46,15 @@ function updateParagraph() {
 };
 
 function updateTable() {
-  const tableFirstName = document.getElementById('tableFirstName');
-  const tableLastName = document.getElementById('tableLastName');
+  const newRow = document.createElement('tr');
+  const newFirstName = document.createElement('td');
+  const newLastName = document.createElement('td');
 
-  tableFirstName.innerText = firstName.value;
-  tableLastName.innerText = lastName.value;
+  newFirstName.innerText = firstName.value;
+  newLastName.innerText = lastName.value;
+
+  newRow.append(newFirstName);
+  newRow.append(newLastName);
+  namesTable.append(newRow);
 };
 

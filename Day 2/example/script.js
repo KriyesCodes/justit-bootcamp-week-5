@@ -24,3 +24,25 @@ How can we add an attribute to a html element?
 How can we remove an attribute of a html element?
   removeAttribute method
 */
+
+const hideButton = document.getElementById('hide-button');
+console.log(hideButton);
+
+hideButton.addEventListener('click', hideButtonOnClick);
+
+function hideButtonOnClick() {
+  const p1 = document.getElementById('p1');
+  if (p1.style.display === 'none') {
+    p1.style.display = 'block';
+  }
+  else {
+    p1.style.display = 'none';
+  }
+}
+
+let jumpscare = () => {
+  alert("JUMPSCARE!");
+}
+
+const clickButton = document.getElementById('alert-button');
+clickButton.addEventListener('click', jumpscare);

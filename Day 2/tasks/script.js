@@ -38,8 +38,17 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 
 submitButton.addEventListener('click', updateParagraph);
+submitButton.addEventListener('click', updateTable);
 
 function updateParagraph() {
   p1.innerText = `Your full name is: ${firstName.value} ${lastName.value}`;
+};
+
+function updateTable() {
+  const tableFirstName = document.getElementById('tableFirstName');
+  const tableLastName = document.getElementById('tableLastName');
+
+  tableFirstName.innerText = firstName.value;
+  tableLastName.innerText = lastName.value;
 };
 

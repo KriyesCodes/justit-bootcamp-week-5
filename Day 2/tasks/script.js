@@ -26,3 +26,20 @@ function div1Normalize() {
   `
   div1.innerText = '';
 }
+
+/*
+Have a p, two text box for first name and last name and a save button
+when you click on the button it should change the p text to your full name
+*/
+
+const submitButton = document.getElementById('submit');
+const p1 = document.getElementById('p1');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+
+submitButton.addEventListener('click', updateParagraph);
+
+function updateParagraph() {
+  p1.innerText = `Your full name is: ${firstName.value} ${lastName.value}`;
+};
+

@@ -26,4 +26,3 @@ function div1Normalize() {
   `
   div1.innerText = '';
 }
-

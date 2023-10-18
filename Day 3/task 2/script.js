@@ -12,4 +12,14 @@ function betterSubstring(string, index, lastIndex) {
   return subString;
 }
 
-console.log(betterSubstring('Take this beta substring method losers', 10, 23));
+const textInput = document.getElementById('text-input');
+const submitButton = document.getElementById('submit-button');
+const num1 = document.getElementById('num1');
+const num2 = document.getElementById('num2');
+
+submitButton.addEventListener('click', changeParagraph);
+
+function changeParagraph() {
+  const p1 = document.getElementById('p1');
+  p1.innerText = `Found substring: ${betterSubstring(textInput.value, num1.value, num2.value)}`
+}

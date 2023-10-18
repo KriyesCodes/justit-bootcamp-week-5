@@ -9,8 +9,8 @@ const randomiseButton = document.getElementById('randomise-button');
 
 function alertRandomNumber() {
   const randomScale = Math.random();
-  const num1Value = Number(num1.value);
-  const num2Value = Number(num2.value);
+  const num1Value = Math.min(Number(num1.value), Number(num2.value));
+  const num2Value = Math.max(Number(num1.value), Number(num2.value));
 
   alert(String((Math.round(num1Value + (num2Value - num1Value) * randomScale))));
 }

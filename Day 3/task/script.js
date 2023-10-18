@@ -11,16 +11,17 @@
 */
 
 const textBox = document.getElementById('text-box');
-const submitButton = document.getElementById('submit-button');
+const saveButton = document.getElementById('save-button');
 const showDataButton = document.getElementById('show-data-button');
 const clearButton = document.getElementById('clear-button');
 
-submitButton.addEventListener('click', saveToLocalStorage);
+saveButton.addEventListener('click', saveToLocalStorage);
 showDataButton.addEventListener('click', showLocalStorage);
 clearButton.addEventListener('click', clearStorage);
 
 function saveToLocalStorage() {
-  localStorage.setItem(`${textBox.value}-KEY`, textBox.value);
+  const currentDate = new Date();
+  localStorage.setItem(`${textBox.value}-KEY-${currentDate.toUTCString()}`, textBox.value);
 }
 
 function showLocalStorage() {

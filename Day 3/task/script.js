@@ -13,9 +13,11 @@
 const textBox = document.getElementById('text-box');
 const submitButton = document.getElementById('submit-button');
 const showDataButton = document.getElementById('show-data-button');
+const clearButton = document.getElementById('clear-button');
 
 submitButton.addEventListener('click', saveToLocalStorage);
 showDataButton.addEventListener('click', showLocalStorage);
+clearButton.addEventListener('click', clearStorage);
 
 function saveToLocalStorage() {
   localStorage.setItem(`${textBox.value}-KEY`, textBox.value);
@@ -23,4 +25,8 @@ function saveToLocalStorage() {
 
 function showLocalStorage() {
   console.log(localStorage);
+}
+
+function clearStorage() {
+  localStorage.clear();
 }

@@ -26,3 +26,18 @@ localStorage.clear();
 
 // session storage - can be expired
 // local storage
+
+// String Methods
+// we can write string in three different ways
+let string = "This is\" a string";
+let string1 = 'It\'s a string';
+let string2 = `This is ${string1}`;
+
+// slice(startIndex, endIndex) - endIndex is exclusive
+
+// substring(startIndex, endIndex) - similar to slice but doesn't accept negative value
+// negative values will be treated as 0 for substring
+
+// substr(startIndex, numberOfCharacters) - deprecated, dont use
+
+console.log('This is a sentence'.split(' '));

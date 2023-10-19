@@ -44,22 +44,28 @@ timer.innerText = "00:00:00:00";
 let date = new Date();
 let previousTime = date.getTime();
 let timeElapsed = 0;
+let currentTimerTime = 0;
 
 let timerInterval;
 let displayTimerInterval;
+
+let isFirstStart = true;
 
 function addTimeElapsed() {
   date = new Date();
   let currentTime = date.getTime();
 
   timeElapsed = currentTime - previousTime;
+  currentTimerTime += timeElapsed;
+
+  previousTime = currentTime;
 }
 
-function displayTimeElapsed() {
-  let milliseconds = Math.floor((timeElapsed % 1000) / 10);
-  let seconds = Math.floor((timeElapsed / 1000) % 60);
-  let minutes = Math.floor((timeElapsed / (1000 * 60)) % 60);
-  let hours = Math.floor((timeElapsed / (1000 * 60 * 60)) % 24);
+function displayCurrentTimerTime() {
+  let milliseconds = Math.floor((currentTimerTime % 1000) / 10);
+  let seconds = Math.floor((currentTimerTime / 1000) % 60);
+  let minutes = Math.floor((currentTimerTime / (1000 * 60)) % 60);
+  let hours = Math.floor((currentTimerTime / (1000 * 60 * 60)) % 24);
 
   hours = (hours < 10) ? "0" + hours : hours;
   minutes = (minutes < 10) ? "0" + minutes : minutes;
@@ -69,22 +75,32 @@ function displayTimeElapsed() {
 }
 
 function startTimer() {
+  if (!isFirstStart) {
+    clearInterval(timerInterval);
+    clearInterval(displayTimerInterval);
+  }
+  else {
+    isFirstStart = false;
+  }
   date = new Date();
   previousTime = date.getTime();
   timerInterval = setInterval(addTimeElapsed, 1);
-  displayTimerInterval = setInterval(displayTimeElapsed, 1);
+  displayTimerInterval = setInterval(displayCurrentTimerTime, 1);
 }
 
 function stopTimer() {
   clearInterval(timerInterval);
   clearInterval(displayTimerInterval);
+  timeElapsed = 0;
 }
 
 function resetTimer() {
   clearInterval(timerInterval);
   clearInterval(displayTimerInterval);
   timeElapsed = 0;
+  currentTimerTime = 0;
   timer.innerText = "00:00:00:00";
+  isFirstStart = true;
 }
 
 startButton.addEventListener('click', startTimer);

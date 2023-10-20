@@ -1,3 +1,7 @@
+// const firstName = document.getElementById('firstName');
+// const lastName = document.getElementById('lastName');
+// const age = document.getElementById('age');
+
 // JSON - JavaScript Object Notation
 
 // Test based data-transfer format
@@ -23,8 +27,8 @@ let JSONNested = [{ "name": "James", "age": 35 }, { "name": "Hannah", "age": 30 
 
 let JSONString = `{
   "people":[
-    {"firstName":"David", "lastName":"Smith"},
-    {"firstName":"John", "lastName": "Doe"}
+    {"firstName":"David", "lastName":"Smith", "age":30},
+    {"firstName":"John", "lastName": "Doe", "age": 25}
   ]
 }`;
 
@@ -34,3 +38,20 @@ let JSONString = `{
 
 const JSONObject = JSON.parse(JSONString);
 console.log(JSONObject);
+
+// firstName.innerText = JSONObject.people[0].firstName;
+// lastName.innerText = JSONObject.people[0].lastName;
+// age.innerText = JSONObject.people[0].age;
+
+// for (let { firstName, lastName } of JSONObject.people) {
+//   let personName = document.createElement('p');
+//   personName.innerText = `${firstName} ${lastName}`;
+//   document.body.append(personName);
+// }
+
+JSONObject.people.forEach(({ firstName, lastName }) => {
+  let personName = document.createElement('p');
+  personName.innerText = `${firstName} ${lastName}`;
+  document.body.append(personName);
+});
+
